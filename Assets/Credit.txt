@@ -1,0 +1,5 @@
+Credit to FyreFly Studios on youtube for the wave spawner System, and another video explaining what the heck a scriptableobject is. 
+
+
+
+

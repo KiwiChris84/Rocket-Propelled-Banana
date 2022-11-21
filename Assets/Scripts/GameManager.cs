@@ -27,10 +27,10 @@ public class GameManager : MonoBehaviour
 
     public void NewGame()
     {
-        Asteroid[] asteroids = FindObjectsOfType<Asteroid>();
+        MissileJellyfish[] MissileJellyfishs = FindObjectsOfType<MissileJellyfish>();
 
-        for (int i = 0; i < asteroids.Length; i++) {
-            Destroy(asteroids[i].gameObject);
+        for (int i = 0; i < MissileJellyfishs.Length; i++) {
+            Destroy(MissileJellyfishs[i].gameObject);
         }
 
         gameOverUI.SetActive(false);
@@ -46,17 +46,17 @@ public class GameManager : MonoBehaviour
         player.gameObject.SetActive(true);
     }
 
-    public void AsteroidDestroyed(Asteroid asteroid)
+    public void MissileJellyfishDestroyed(MissileJellyfish MissileJellyfish)
     {
-        explosionEffect.transform.position = asteroid.transform.position;
+        explosionEffect.transform.position = MissileJellyfish.transform.position;
         explosionEffect.Play();
 
-        if (asteroid.size < 0.7f) {
-            SetScore(score + 100); // small asteroid
-        } else if (asteroid.size < 1.4f) {
-            SetScore(score + 50); // medium asteroid
+        if (MissileJellyfish.size < 0.7f) {
+            SetScore(score + 100); // small MissileJellyfish
+        } else if (MissileJellyfish.size < 1.4f) {
+            SetScore(score + 50); // medium MissileJellyfish
         } else {
-            SetScore(score + 25); // large asteroid
+            SetScore(score + 25); // large MissileJellyfish
         }
     }
 
