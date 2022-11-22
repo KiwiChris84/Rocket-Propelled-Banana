@@ -6,6 +6,7 @@ public class MissileJellyfish : MonoBehaviour
 {
     public new Rigidbody2D rigidbody { get; private set; }
     public SpriteRenderer spriteRenderer { get; private set; }
+    
     public Sprite[] sprites;
     public Sprite[] runSprites;
     private int spriteIndex;
@@ -15,6 +16,7 @@ public class MissileJellyfish : MonoBehaviour
     public float maxSize = 1.65f;
     public float movementSpeed = 50f;
     public float maxLifetime = 30f;
+  
 
     private void Awake()
     {
@@ -35,6 +37,7 @@ public class MissileJellyfish : MonoBehaviour
 
         // Destroy the MissileJellyfish after it reaches its max lifetime
         Destroy(gameObject, maxLifetime);
+        
     }
 
     public void SetTrajectory(Vector2 direction)
@@ -46,6 +49,7 @@ public class MissileJellyfish : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+
         if (collision.gameObject.CompareTag("Bullet"))
         {
             // Check if the MissileJellyfish is large enough to split in half
@@ -56,11 +60,14 @@ public class MissileJellyfish : MonoBehaviour
                 CreateSplit();
             }
 
+            
+         
             FindObjectOfType<GameManager>().MissileJellyfishDestroyed(this);
 
             // Destroy the current MissileJellyfish since it is either replaced by two
             // new MissileJellyfishs or small enough to be destroyed by the bullet
             Destroy(gameObject);
+            
         }
     }
 

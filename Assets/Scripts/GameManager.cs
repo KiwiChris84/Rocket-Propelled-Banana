@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
 
     public int lives { get; private set; }
     public Text livesText;
-
+    public int destroyed;
     private void Start()
     {
         NewGame();
@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour
         gameOverUI.SetActive(false);
 
         SetScore(0);
-        SetLives(3);
+        SetLives(1);
         Respawn();
     }
 
@@ -53,10 +53,13 @@ public class GameManager : MonoBehaviour
 
         if (MissileJellyfish.size < 0.7f) {
             SetScore(score + 100); // small MissileJellyfish
+            destroyed = destroyed + 1;
         } else if (MissileJellyfish.size < 1.4f) {
             SetScore(score + 50); // medium MissileJellyfish
+            destroyed = destroyed + 1;
         } else {
             SetScore(score + 25); // large MissileJellyfish
+            destroyed = destroyed + 1;
         }
     }
 

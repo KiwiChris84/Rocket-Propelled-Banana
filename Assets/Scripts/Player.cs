@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
 
     public float thrustSpeed = 1f;
     public bool thrusting { get; private set; }
+    public bool reversing { get; private set; }
 
     public float turnDirection { get; private set; } = 0f;
     public float rotationSpeed = 0.1f;
@@ -31,7 +32,7 @@ public class Player : MonoBehaviour
     private void Update()
     {
         thrusting = Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow);
-
+        reversing = Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow);
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)) {
             turnDirection = 1f;
         } else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)) {
@@ -49,6 +50,9 @@ public class Player : MonoBehaviour
     {
         if (thrusting) {
             rigidbody.AddForce(transform.up * thrustSpeed);
+        }
+        if (reversing) {
+            rigidbody.AddForce(-transform.up * thrustSpeed);
         }
 
         if (turnDirection != 0f) {

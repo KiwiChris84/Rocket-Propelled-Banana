@@ -3,6 +3,7 @@
 public class MissileJellyfishSpawner : MonoBehaviour
 {
     public MissileJellyfish asteroidPrefab;
+    public GameManager GameManager1;
     public float spawnDistance = 12f;
     public float spawnRate = 0.5f;
     public int amountPerSpawn = 1;
@@ -16,31 +17,38 @@ public class MissileJellyfishSpawner : MonoBehaviour
  
     private float timeBtwnSpawns;
     private int i = 0;
+    private bool start = false;
  
     private bool stopSpawning = false;
      private void Start()
     {
-        SpawnWave();
+      start =  true;
+
     }
     private void Awake()
     {
  
         currentWave = waves[i];
         timeBtwnSpawns = currentWave.TimeBeforeThisWave;
+        SpawnWave();
     }
  
     private void Update()
     {
-        if(stopSpawning)
+        if(start == true){
+            start = false;
+            SpawnWave();
+        }
+        else if(stopSpawning)
         {
             return;
         }
-        else if (Time.time >= timeBtwnSpawns)
+        else if (GameManager1.destroyed >= currentWave.NumberToSpawn * 3)
         {
             SpawnWave();
             IncWave();
             timeBtwnSpawns = Time.time + currentWave.TimeBeforeThisWave;
-            stopSpawning = true;
+            GameManager1.destroyed = 0;
         } else 
         return;
     }    
@@ -52,15 +60,21 @@ public class MissileJellyfishSpawner : MonoBehaviour
         {
             int num = Random.Range(0, currentWave.EnemiesInWave.Length);
             
-
-            Vector2 spawnDirection = Random.insideUnitCircle.normalized;
-            Vector3 spawnPoint = spawnDirection * spawnDistance;
+Vector2 spawnDirection = Random.insideUnitCircle.normalized;
+Vector3 spawnPoint = spawnDirection * spawnDistance;
+            while(((transform.position.y > 6 || transform.position.y < -6) || (transform.position.x > 14 || transform.position.x < -14)) == true){ 
+            spawnDirection = Random.insideUnitCircle.normalized;
+            spawnPoint = spawnDirection * spawnDistance;
+            spawnPoint += transform.position;
+            }
+            
             Quaternion spawnRotation;
             spawnRotation = transform.rotation;
             
              // Offset the spawn point by the position of the spawner so its
             // relative to the spawner location
-            spawnPoint += transform.position;
+            
+            
 
             // Calculate a random variance in the MissileJellyfish's rotation which will
             // cause its trajectory to change
@@ -86,7 +100,7 @@ public class MissileJellyfishSpawner : MonoBehaviour
         }
         else
         {
-            stopSpawning = true;
+            SpawnWave();
         }
     }
     

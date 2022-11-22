@@ -143,13 +143,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2538125824281061406}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16ab32283fc743344aafff56f9f8983a, type: 3}
+  m_Script: {fileID: 11500000, guid: 74a461d5f885bbf4db220581f8b83bb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   sprites:
-  - {fileID: 21300000, guid: aad3e70e2511f894db20b581d993cfa1, type: 3}
-  - {fileID: 21300000, guid: aad3e70e2511f894db20b581d993cfa1, type: 3}
-  - {fileID: 21300000, guid: aad3e70e2511f894db20b581d993cfa1, type: 3}
   - {fileID: 21300000, guid: aad3e70e2511f894db20b581d993cfa1, type: 3}
   runSprites:
   - {fileID: 21300000, guid: aad3e70e2511f894db20b581d993cfa1, type: 3}
@@ -159,3 +156,4 @@ MonoBehaviour:
   maxSize: 1.65
   movementSpeed: 50
   maxLifetime: 30
+  destroyed: 0
