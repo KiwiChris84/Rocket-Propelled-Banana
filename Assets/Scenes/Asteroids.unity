@@ -706,7 +706,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
+  m_BackGroundColor: {r: 0.2583481, g: 0.41056904, b: 0.7735849, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -6187,6 +6187,7 @@ MonoBehaviour:
   player: {fileID: 1389388138}
   explosionEffect: {fileID: 945290021}
   gameOverUI: {fileID: 1759306016}
+  Spawner1: {fileID: 293394488}
   scoreText: {fileID: 1159035112}
   livesText: {fileID: 2013675850}
   destroyed: 0

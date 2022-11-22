@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
     public Player player;
     public ParticleSystem explosionEffect;
     public GameObject gameOverUI;
-
+    public MissileJellyfishSpawner Spawner1;
     public int score { get; private set; }
     public Text scoreText;
 
@@ -38,6 +38,9 @@ public class GameManager : MonoBehaviour
         SetScore(0);
         SetLives(1);
         Respawn();
+        destroyed = 0;
+        Spawner1.Start();
+
     }
 
     public void Respawn()

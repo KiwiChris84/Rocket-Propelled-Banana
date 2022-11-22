@@ -20,9 +20,10 @@ public class MissileJellyfishSpawner : MonoBehaviour
     private bool start = false;
  
     private bool stopSpawning = false;
-     private void Start()
+     public void Start()
     {
       start =  true;
+      currentWave = waves[i];
 
     }
     private void Awake()
