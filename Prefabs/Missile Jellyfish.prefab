@@ -156,4 +156,5 @@ MonoBehaviour:
   maxSize: 1.65
   movementSpeed: 50
   maxLifetime: 30
-  destroyed: 0
+  PowerUpPrefab: {fileID: 5888988134778168178, guid: a93719c47856d8640bad535ccf57b7b3,
+    type: 3}

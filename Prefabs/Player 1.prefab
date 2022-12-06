@@ -148,7 +148,40 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 2758569942672203454, guid: d8d55dfacb762f64cbf4c05cc402a4de,
     type: 3}
+  spriteRenderer: {fileID: 0}
+  runSprites: []
+  RedSprites:
+  - {fileID: 21300000, guid: d1fc756c13b89d54092536bdd1a8835d, type: 3}
+  - {fileID: 21300000, guid: db30898007a9a3e4eaa899736cb3168f, type: 3}
+  OrangeSprites:
+  - {fileID: 21300000, guid: a3ea77fd0bbdc8d4a9e762900b2260d2, type: 3}
+  - {fileID: 21300000, guid: 50b11880ea47a8f448975295a38d4adf, type: 3}
+  BlueSprites:
+  - {fileID: 21300000, guid: 11b8b60a73e2d434c884275c2aa1a112, type: 3}
+  - {fileID: 21300000, guid: 191db8d2fc72cf04c860a8349d7b062f, type: 3}
+  YellowSprites:
+  - {fileID: 21300000, guid: 75f4539fba549154c938ff02f5bf9e81, type: 3}
+  - {fileID: 21300000, guid: f129a80207a665f4a9a6efff1e304c43, type: 3}
+  GreenSprites:
+  - {fileID: 21300000, guid: 13451005bc3ffbc40b567334f5e38c14, type: 3}
+  - {fileID: 21300000, guid: 87b8789284b05f94e81d609ad858e83c, type: 3}
+  spriteIndex: 0
   thrustSpeed: 1
-  rotationSpeed: 0.1
+  rotationSpeed: 0.5
   respawnDelay: 3
   respawnInvulnerability: 3
+  velocity: {x: 0, y: 3}
+  turnSpeed: 0.1
+  bullet2Prefab: {fileID: 0}
+  bullet2Ready: 0
+  rpbPrefab: {fileID: 0}
+  RPBanana: 0
+  BlueBerryBeam: 0
+  left: {x: -1, y: 0}
+  right: {x: 1, y: 0}
+  down: {x: 0, y: -1}
+  up: {x: 0, y: 1}
+  tr: {x: 1, y: 1}
+  tl: {x: -1, y: 1}
+  br: {x: 1, y: -1}
+  bl: {x: -1, y: -1}
